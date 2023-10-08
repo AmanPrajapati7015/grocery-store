@@ -126,7 +126,7 @@ def Billmaker(list1):
    
    
 def update_orderno():
-    f = open("./supporting files/lastbill.txt","r+") 
+    f = open("supporting files/lastbill.txt","r+") 
     o = f.read()
     global ON, table
     Date,orderno = o.split('__')
@@ -177,17 +177,20 @@ def checkout(orderno, item_Entry_List):
         update_orderno()
         Bill_data = [Bill.orderNo, Bill.data, Bill.noOfItems,Bill.total, Bill.billNo]
         Billmaker(Bill_data)
-        G = open("supporting files\\billdata.bin","ab") 
+        G = open("supporting files/billdata.bin","ab") 
         pickle.dump(Bill_data, G)
         G.close
         global ON
         ON += 1
         billNo.config(text ="BILL NO :"+str(date.today())+"__"+str(ON))
-        f = open("supporting files\\lastbill.txt","w+")
-# updating last bill no
+        
+        # updating last bill no inside the lastbill file ... to store it permanently.
+        f = open("supporting files/lastbill.txt","w")
         f.write(Bill.billNo)
         f.close()
-        path = Bill.billNo[0:10]+"\\"+Bill.billNo+".txt" 
+
+        # have to think about it..
+        # path = Bill.billNo[0:10]+"/"+Bill.billNo+".txt" 
         # os.startfile(path, "open")
 
         for i in range(len(item_Entry_List)): #upating stock after bill is paid....
