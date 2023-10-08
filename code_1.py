@@ -104,8 +104,8 @@ def Billmaker(list1):
     total = list1[3]
     billNo =list1[4]
 
-    makedayfolder(billNo[0:10])
-    B = open(billNo[0:10]+"/"+billNo+".txt",'w+') 
+    makedayfolder("Bills/"+billNo[0:10])
+    B = open("Bills/"+billNo[0:10]+"/"+billNo+".txt",'w+') 
     B.write("\t\t\t\tBILL\n") 
     B.write("-------------------------------------------------\n") 
     B.write("Bill No. : \t\t\t\t\t"+billNo+'\n')
