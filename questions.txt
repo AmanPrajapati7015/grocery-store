@@ -1,0 +1,7 @@
+1. have to deploy it or just provide instrcution for user.... to create database and all.
+if deply then.
+    1.1 how to deploy it ...having multiple table for each users and change code's variable accordingly
+
+2. what to provide in README.md file or documentaion?
+
+3. Have to restructure code or add just better comments?

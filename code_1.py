@@ -116,8 +116,9 @@ def Billmaker(list1):
     B.write("Item Name\t\tQty\tPrice\t\t\tTotal\n") 
     B.write("-------------------------------------------------\n") 
     for i in range(noOfItems):
+        # print(data[i])
         itemcol = str(data[i][0])+'\t\t'+str(data[i][2])+'\t'+str(data[i][1]) +'\t\t\t'+str(data[i][2]*data[i][1]) +'\n'
-    B.write(itemcol) 
+        B.write(itemcol) 
     B.write("_________________________________________________\n") 
     B.write("GRAND TOTAL = " +str(total)+'\n') 
     B.write("_________________________________________________\n") 
